@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Avatar } from '@material-ui/core'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AccessTimeIcon from "@material-ui/icons/AccessTime"
 import SearchIcon from "@material-ui/icons/Search"
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
 function Header() {
     return (
         <HeaderContainer> 
-            {/* {Header Left} */}
             <HeaderLeft>
                 <HeaderAvatar 
                     //TODO Add onClick
@@ -15,13 +15,13 @@ function Header() {
                 />
                 <AccessTimeIcon />
             </HeaderLeft>
-            {/* {Header Center} */}
             <HeaderSearch>
                 <SearchIcon />
                 <input placeholder="Search" />
             </HeaderSearch>
-
-            {/* {Header Right} */}
+            <HeaderRight>
+                <HelpOutlineIcon />
+            </HeaderRight>
         </HeaderContainer>
     )
 }
@@ -46,12 +46,12 @@ const HeaderLeft = styled.div`
     margin-left: 20px;
     
     > .MuiSvgIcon-root {
-        margin-left: auto;
-        margin-right: 30px;
+        margin-left: 30px;
+        margin-right: auto;
     }
 `
 
-const HeaderAvatar = styled(Avatar)`
+const HeaderAvatar = styled(AccountCircleIcon)`
     cursor: pointer;
 
     :hover {
@@ -66,7 +66,7 @@ const HeaderSearch = styled.div`
     border-radius: 6px;
     background-color: #421f44;
     text-align: center; 
-    padding: 0px 50px;
+    padding: 2px 50px;
     color: gray;
     border: 1px gray solid;
 
@@ -81,5 +81,13 @@ const HeaderSearch = styled.div`
 `
 
 const HeaderRight = styled.div`
+    display: flex;
+    flex: 0.3;
+    align-items: flex-end;
+    
+    > .MuiSvgIcon-root {
+        margin-left: auto;
+        margin-right: 20px;
+    }
 
-`a
+`
